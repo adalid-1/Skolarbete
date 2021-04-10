@@ -51,7 +51,7 @@ protected:
 	float _colourG;
 	float _colourB;
 public:
-	bool isPlayer;
+	bool isNotBreakable;
 	
 
 

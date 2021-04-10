@@ -5,7 +5,7 @@
 
 Shape::Shape(void)
 {
-	isPlayer = false;
+	isNotBreakable = false;
 
 }
 

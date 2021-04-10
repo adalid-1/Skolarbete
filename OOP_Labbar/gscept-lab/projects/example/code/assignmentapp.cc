@@ -19,17 +19,12 @@ AssignmentApp::AssignmentApp()
 {
 	// empty
 }
-
 //------------------------------------------------------------------------------
-/**
-*/
 AssignmentApp::~AssignmentApp()
 {
 	// empty
 }
 //------------------------------------------------------------------------------
-/**
-*/
 void 
 AssignmentApp::Setup()
 {
@@ -57,7 +52,7 @@ AssignmentApp::Setup()
 	breakball = new BreakoutBall(0.2f);
 	breakball->setPos(0.0f, 0.9f);
 	breakball->setVelocity(0.007f, 0.007f);
-	breakball->isPlayer = true;
+	breakball->isNotBreakable = true;
 	former.push_back(breakball);
 
 	window = this->getWindow();
@@ -105,11 +100,6 @@ AssignmentApp::Update()
 
 	for(int i = 0; i <= formerSize; i ++)
 	{
-		
-		
-
-
-		
 		former[i]->render();
 		former[i]->update();
 
@@ -117,7 +107,7 @@ AssignmentApp::Update()
 		tempVector = former[i]->getPos() - breakball->getPos();
 
 		//Compares distance to breakball radius and makes sure it´s not about to destroy itself
-		if (tempVector.lenVector(tempVector) < breakball->getRadie() && !former[i]->isPlayer)
+		if (tempVector.lenVector(tempVector) < breakball->getRadie() && !former[i]->isNotBreakable)
 		{
 			//Bounce if 
 			if(abs(tempVector.getX())< abs(tempVector.getY()))
@@ -132,10 +122,7 @@ AssignmentApp::Update()
 			formerSize--;
 			i--;
 		}
-
 	}
-	//former[1]->rotate(0.0005);
-	
 }
 
 void AssignmentApp::KeyEvent(int key, int action, int modifier)
@@ -145,7 +132,6 @@ void AssignmentApp::KeyEvent(int key, int action, int modifier)
 
 	if(action == 1 || action == 2)
 	{
-
 		switch (key) 
 		{
 		case 49://1
@@ -197,8 +183,6 @@ void AssignmentApp::KeyEvent(int key, int action, int modifier)
 			cout << "Du tryckte w" << endl;
 			for (int i = 0; i <= formerSize; i++)
 			{
-
-
 				if (typeid((*former[i])) == typeid(Triangle))
 				{
 
@@ -223,18 +207,11 @@ void AssignmentApp::KeyEvent(int key, int action, int modifier)
 			break;
 		case 82://r
 			break;
-
-
-
-
-
 		case 263://left
 			//former[4]->MoveX(-0.02f);
 			break;
 		case 265://up
 			//former[4]->MoveY(0.02f);
-
-
 			for (int i = 0; i < 3; i++)
 			{
 				for (int a = 0; a < 3; a++)
@@ -255,18 +232,11 @@ void AssignmentApp::KeyEvent(int key, int action, int modifier)
 			//former[4]->MoveY(-0.02f);
 			break;
 
-		case 256:
+		case 256://esc
 			this->window->Close();
 			return;
 			
 		}
-		
-		//if (former.size() > 0)former[former.size() - 1]->setPos(rand() % 100 / 50.0f - 1, rand() % 100 / 50.0f - 1);
-
 	}
-
 }
-
-
-
 } // namespace Example
