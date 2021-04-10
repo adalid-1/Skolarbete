@@ -1,0 +1,306 @@
+Runtime: 497759384
+Number of items sorted: 1000000
+Current order: Hej
+Runtime: 636
+Number of items sorted: 6
+Current order: Hej
+Runtime: 803
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1164
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1793
+Number of items sorted: 6
+Current order: Hej
+Runtime: 2063
+Number of items sorted: 6
+Current order: Hej
+Runtime: 2963
+Number of items sorted: 6
+Current order: Hej
+Runtime: 2710
+Number of items sorted: 6
+Current order: Hej
+Runtime: 3054
+Number of items sorted: 6
+Current order: Hej
+Runtime: 2376
+Number of items sorted: 6
+Current order: Hej
+Runtime: 2705
+Number of items sorted: 6
+Current order: Hej
+Runtime: 2128
+Number of items sorted: 6
+Current order: Hej
+Runtime: 2588
+Number of items sorted: 10
+Current order: Hej
+Runtime: 3432
+Number of items sorted: 10
+Current order: Hej
+Runtime: 14
+Number of items sorted: 6
+Current order: Hej
+Runtime: 8
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1262
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1184
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1075
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1046
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1630
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1550
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1686
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1343
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1020
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1512
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1487
+Number of items sorted: 10
+Current order: Hej
+Runtime: 1667
+Number of items sorted: 10
+Current order: Hej
+Runtime: 1571
+Number of items sorted: 10
+Current order: Hej
+Runtime: 1801
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1526
+Number of items sorted: 12
+Current order: Hej
+Runtime: 2091
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1701
+Number of items sorted: 12
+Current order: Hej
+Runtime: 2259
+Number of items sorted: 12
+Current order: Hej
+Runtime: 2603
+Number of items sorted: 12
+Current order: Hej
+Runtime: 2291
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1999
+Number of items sorted: 12
+Current order: Hej
+Runtime: 0
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 1
+Number of items sorted: 6
+Current order: Hej
+Runtime: 1
+Number of items sorted: 8
+Current order: Hej
+Runtime: 1
+Number of items sorted: 8
+Current order: Hej
+Runtime: 1
+Number of items sorted: 8
+Current order: Hej
+Runtime: 1
+Number of items sorted: 8
+Current order: Hej
+Runtime: 1
+Number of items sorted: 12
+Current order: Hej
+Runtime: 2
+Number of items sorted: 16
+Current order: Hej
+Runtime: 2
+Number of items sorted: 18
+Current order: Hej
+Runtime: 2
+Number of items sorted: 18
+Current order: Hej
+Runtime: 2
+Number of items sorted: 20
+Current order: Hej
+Runtime: 2
+Number of items sorted: 20
+Current order: Hej
+Runtime: 4
+Number of items sorted: 60
+Current order: Hej
+Runtime: 5
+Number of items sorted: 60
+Current order: Hej
+Runtime: 102
+Number of items sorted: 600
+Current order: Hej
+Runtime: 1780
+Number of items sorted: 10000
+Current order: Hej
+Runtime: 1
+Number of items sorted: 10
+Current order: Hej
+Runtime: 1
+Number of items sorted: 10
+Current order: Hej
+Runtime: 2
+Number of items sorted: 15
+Current order: Hej
+Runtime: 3
+Number of items sorted: 15
+Current order: Hej
+Runtime: 3
+Number of items sorted: 15
+Current order: Hej
+Runtime: 3
+Number of items sorted: 15
+Current order: Hej
+Runtime: 163099
+Number of items sorted: 15
+Current order: Hej
+Runtime: 2
+Number of items sorted: 15
+Current order: Hej
+Runtime: 96
+Number of items sorted: 100
+Current order: Hej
+Runtime: 13149
+Number of items sorted: 100000
+Current order: Hej
+Runtime: 8341
+Number of items sorted: 100000
+Current order: Hej
+Runtime: 7987
+Number of items sorted: 100000
+Current order: Hej
+Runtime: 3061
+Number of items sorted: 10000
+Current order: Hej
+Runtime: 32
+Number of items sorted: 100
+Current order: Hej
+Runtime: 3
+Number of items sorted: 100
+Current order: Hej
+Runtime: 28789
+Number of items sorted: 1000000
+Current order: Hej
+Runtime: 746
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 1676
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 1432
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 771
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 1710
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 1431
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 1064
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 661
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 862
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 1109
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 1185
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 3
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 3
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 4
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 4
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 721
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 721
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 905
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 447
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 931
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 618
+Number of items sorted: 10
+Current order: Sorted
+Runtime: 104737
+Number of items sorted: 1000
+Current order: Sorted
+Runtime: 239590
+Number of items sorted: 1000
+Current order: Sorted
