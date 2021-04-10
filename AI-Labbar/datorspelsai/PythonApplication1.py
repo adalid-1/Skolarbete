@@ -2,201 +2,12 @@
 #from random import randint
 #from time import clock
 
+#Gör så att man sparar vännen i appointment så behöver man inte ha friend som attribut
 import time
-class BaseGameEntity:
-    _myID = ""
-    _nextID = ""
-
-    def __init__(self, newID):
-        _myID = newID
-        EntityManager.RegisterEntity(self)
-
-    def setID(value):
-        #Se till att ID är större än eller lika med nästa tillgängliga ID 
-        #inkrementerar sedan _nextID 
-        pass
-
-    def Update():
-        pass
-
-    def getID(self):
-        return self._myID
-
-    def HandleMessage(self, Message):
-        print ("Message handled by: " + self.getID() + " at" + clock.getTime() )
-        pass
-
-class EntityManager:
-
-    class __EntityManager:
-        people = {}
-        def __init__(self):
-            pass
-
-        def RegisterEntity(self, entity):
-            self.people[entity._myID] = entity
-        #aaaa
-        def GetEntityFromID(self, id):
-            return self.people[id]
-                        #aaaaa
-        def RemoveEntity(self, id):
-            self.people.pop(id)
-
-
-    #Om man försöker instansiera en ny så händer inget om det redan finns en instans av __EntityManager 
-    instance = None
-    def __init__(self):
-        if not EntityManager.instance:
-            EntityManager.instance = EntityManager.__EntityManager()
-        else:
-            pass
-
-    #Gör så att jag kommer åt attribut/funktioner från instansen av __EntityMngr även om jag bara skriver EntityMngr.someThing
-    def __getattr__(self, name):
-        return getattr(self.instance,name)
-
-class Places:
-    class __Places:
-        _places = {  
-
-            #Saloon to:
-         "Saloon": {"Saloon" : 0,
-             "Store" : 1,
-          "Home" :3,
-         "Mine" : 4,
-          "Bank" : 2},
-         #Mine to:
-         "Mine": {"Mine" : 0,
-             "Store" : 4,
-         "Home" : 5,
-          "Bank" : 2,
-           "Saloon" : 4},
-         #Bank to:
-         "Bank":  {"Bank" : 0,
-             "Store" : 2,
-          "Mine" : 2,
-          "Home" : 3,
-          "Saloon" : 2},
-         #Home to:
-         "Home": {"Home" : 0,
-             "Store" : 3,
-          "Bank" : 4,
-          "Mine" : 5,
-          "Saloon" : 3},
-         #Store to:
-         "Store":{"Store" : 0,
-             "Home" : 3,
-         "Bank" : 2,
-         "Mine" : 4,
-         "Saloon" : 1}
-         #Graveyard to:
-         }
-        
-        def __init__(self):
-            pass
-
-        def GetDistance(self, froM, tO):
-            return self._places[froM][tO]
-
-    instance = None
-    def __init__(self):
-        if not Places.instance:
-            Places.instance = Places.__Places()
-        else:
-            pass
-
-    def __getattr__(self, name):
-        return getattr(self.instance, name)
-
-
-
-
-class Telegram:
-    #Avsändare
-    Sender = None
-
-    #Mottagare
-    Reciever = None
-
-    #Meddelandet
-    Msg = None
-
-    #Fördröjning innan meddelandet "kommer fram"
-    DispatchTime = 0
-
-    #Eventuell extra info som man kan vilja skicka med
-    ExtraInfo = None
-
-    def __init__(self, senderID, Rcvr, Msg, DispatchTime, XtraInfo):
-        self.Sender = senderID
-        self.Reciever = Rcvr
-        self.Msg = Msg
-        self.DispatchTime = DispatchTime
-        self.ExtraInfo = XtraInfo
-
-class Appointment:
-
-    time_ = 0
-    place_ = ""
-    def __init__(self, t, p):
-        self.time_ = t
-        self.place_ = p
-
-
-class MessageDispatcher:
-    
-      #Gör en privat innre klass som användaren inte kommer åt direkt 
-    class __MessageDispatcher:
- #Nått att containa meddelanden i (helst sorterat)
-        PriorityQue = {}
-        PushingList = []
-        def __init__(self):
-            pass
-
-        
-
-        #Skicka iväg meddelande genom att anropa meddelandemottagning hos mottagaren 
-        def Discharge(self, Reciever, Msg):
-            Reciever.HandleMessage(Msg)
-
-        #Skicka
-        def DispatchMessage(self,Sender, Rcvr, Msg, Delay, XtraInfo):
-            Message = Telegram(Sender, Rcvr, Msg, Delay, XtraInfo)
-            if Delay < 1:
-                Reciever = EntityManager.instance.GetEntityFromID(Rcvr)
-                self.Discharge(Reciever,Message)
-            else:
-                self.PushingList.append
-  
-        def DispatchDelayedMessage(self):
-            for Message in self.PushingList:
-                if Message.DispatchTime == 0:
-                    self.Discharge(Message)
-                else:
-                    Message.DispatchTime +=1
-                    
-
-                        
-
-    instance = None
-#    #Om man försöker initiera en Singleton så kollar vi först om det finns
-#    #en instans, om det gör det så byter vi värde på den existerande om inte  
-#    #så skapas en instans.
-    def __init__(self):
-        if not MessageDispatcher.instance:
-           MessageDispatcher.instance = MessageDispatcher.__MessageDispatcher()
-        else:
-            pass
-    
-   
-#    #Get attribute omdirigerar anrop till den enda instansen som finns 
-#    #Försöker man skapa flera så blir de bara proxy till samma instans. 
-    def __getattr__(self, name):
-        return getattr(self.instance,name)
-
-
-
-
+from Entity import *
+from Places import *
+from Message import *
+from FSM import *
 
 #===========================================================================================================
 #===========================================================================================================
@@ -268,7 +79,7 @@ class Miner(BaseGameEntity):
 
         self.FSM.SetCurrentState(startingState)
         
-        self.FSM.SetGlobalState(globalMiner)
+        self.FSM.SetGlobalState(GlobalMinerState)
 
     def __init__(self, id, startingState, friend):
         self._myID = id
@@ -277,7 +88,7 @@ class Miner(BaseGameEntity):
 
         self.FSM.SetCurrentState(startingState)
         
-        self.FSM.SetGlobalState(globalMiner)       
+        self.FSM.SetGlobalState(GlobalMinerState)       
           
     def Update(self):
         #Körs varje iteration
@@ -299,89 +110,6 @@ class Miner(BaseGameEntity):
     
 #===========================================================================================================
 #===========================================================================================================
-class FiniteStateMachine():
-
-    owner = None
-
-    #Vad man gör just nu
-    currentState = None
-
-    #För att kunna fortsätta med något efter nått
-    previousState = None
-
-    #Vad gör ägaren alltid
-    globalState = None
-
-    #Vad ägaren ska göra efter nuvarande state
-    nextState = None
- 
-
-
-
-    
-        #ger tillgång till ägaren
-    def __init__(self, owner):
-        self.owner = owner
-
-        #Ittererar varje tick
-    def Update(self):
-        self.globalState.Execute(self.owner)
-        self.currentState.Execute(self.owner)
-        
-        
-
-      #Byta tillstånd
-    def ChangeState(self, newState):
-        #Försök inte byta från ditt nuvarande state till samma 
-        if (self.currentState != newState):
-
-            #avsluta current state
-            self.currentState.Exit(self.owner)
-            #Spara föregående state
-            self.previousState = self.currentState
-            #Ersätt currentState med newState
-            self.currentState = newState
-            #Kör ingångsfunktionen till det nya tillståndet
-            self.currentState.Enter(self.owner)
-        else:
-            pass
-
-    def HandleMessage(self,message):
-        if self.currentState.OnMessage(self.owner, message):
-            return True
-        elif self.globalState.OnMessage(self.owner, message):
-            return True
-        return False
-
-
-        #Setters
-    def SetCurrentState(self, newState):
-        self.currentState = newState
-    def SetGlobalState(self, newState):
-        self.globalState = newState
-    def SetNextState(self, newState):
-        self.nextState = newState
-    
-
-
-#===========================================================================================================
-#===========================================================================================================
-
-class State:
-    def __init__():
-        pass
-
-    def Enter(BaseGameEntity):
-        pass
-
-    def Execute(BaseGameEntity):
-        pass
-
-    def Exit(BaseGameEntity):
-        pass
-
-    def OnMessage(BaseGameEnitity, Message):
-        pass
 
 
 #===========================================================================================================
@@ -400,7 +128,7 @@ class Sleep(State):
             if(Character.hunger > 0.5*Character.hungerLimit):
                 #Check if there is any food at home 
                 if(Character.foodAtHome > 0):
-                    Character.FSM.SetNextState(Eat)
+                    Character.FSM.SetNextState(EatingState)
 
                     pass
                 #If no food
@@ -414,8 +142,8 @@ class Sleep(State):
 
             Character.fatigue = 0
             print(Character._myID + ": " + "woke")
-            Character.FSM.SetNextState(Work)
-            Character.FSM.ChangeState(walkState)
+            Character.FSM.SetNextState(WorkingState)
+            Character.FSM.ChangeState(WalkingState)
             return
         Character.incrementFatigueBy(-5)
         
@@ -428,7 +156,7 @@ class Sleep(State):
 
 #===========================================================================================================
 #===========================================================================================================
-class Eat(State):
+class EatingState(State):
     location = "Home"
     def Enter(Character):
         print(Character._myID +": " + "Mealtime!")
@@ -444,15 +172,15 @@ class Eat(State):
 
             print(Character._myID + ": " + "eating..")
         else:
-            Character.FSM.SetNextState(Work)
-            Character.FSM.ChangeState(walkState)
+            Character.FSM.SetNextState(WorkingState)
+            Character.FSM.ChangeState(WalkingState)
 
     def Exit(Character):
         print(Character._myID + ": " + "Feeling full!")
 
 #===========================================================================================================
 #===========================================================================================================
-class Work(State):
+class WorkingState(State):
     location = "Mine"
     def Enter(Character):
         print(Character._myID + ": " + "All that glimmers is gold!!")
@@ -473,8 +201,8 @@ class Work(State):
             print(Character._myID + ": " + "Working fast!")
         
         if(Character.goldCarried > 10):
-            Character.FSM.SetNextState(DepositGold)
-            Character.FSM.ChangeState(walkState)
+            Character.FSM.SetNextState(DepositGoldState)
+            Character.FSM.ChangeState(WalkingState)
 
 
     def Exit(Character):
@@ -483,7 +211,7 @@ class Work(State):
 
 #===========================================================================================================
 #===========================================================================================================
-class Drink(State):
+class DrinkingState(State):
     location = "Saloon"
     def Enter(Character):
         print(Character._myID + ": " + "*Dramatic entrance at the Saloon*, everyone sighs")
@@ -494,8 +222,8 @@ class Drink(State):
         Character.incrementThirstBy(-10)      
         print(Character._myID + ": " + "Drinking..")
         if(Character.Thirst < 1):
-            Character.FSM.SetNextState(Work)
-            Character.FSM.ChangeState(walkState)
+            Character.FSM.SetNextState(WorkingState)
+            Character.FSM.ChangeState(WalkingState)
 
 
     def Exit(Character):
@@ -527,8 +255,8 @@ class ShoppinState(State):
             pass
          
         else: 
-            Character.FSM.SetNextState(Work)
-            Character.FSM.ChangeState(walkState)
+            Character.FSM.SetNextState(WorkingState)
+            Character.FSM.ChangeState(WalkingState)
 
     def Exit(Character):
         print(Character._myID + ": " + "Leaving store...")
@@ -536,7 +264,7 @@ class ShoppinState(State):
       
 #===========================================================================================================
 #===========================================================================================================
-class DepositGold(State):
+class DepositGoldState(State):
     location = "Bank"
     def Enter(Character):
         print(Character._myID + ": " + "Pockets are heavy!")
@@ -552,7 +280,7 @@ class DepositGold(State):
         
         if(Character.goldCarried < 1):
             Character.FSM.SetNextState(Sleep)
-            Character.FSM.ChangeState(walkState)
+            Character.FSM.ChangeState(WalkingState)
 
 
     def Exit(Character):
@@ -561,7 +289,7 @@ class DepositGold(State):
 
 #===========================================================================================================
 #===========================================================================================================
-class globalMiner(State):
+class GlobalMinerState(State):
 
     #increment values that will naturally increase, hunger and fatigue
     def Execute(Character):
@@ -572,18 +300,28 @@ class globalMiner(State):
 
         if(Character.Fatigue+5 > Character.FatigueLimit and Character.FSM.nextState != Sleep):
             Character.FSM.SetNextState(Sleep)
-            Character.FSM.ChangeState(walkState)
+            Character.FSM.ChangeState(WalkingState)
+            if(Character.appointment and Character.appointment.time_ - clock.getHours() < Places.instance.GetDistance(Character.location, Character.appointment.place_)):
+                MessageDispatcher.instance.DispatchMessage(Character._myID, Character.friend,"Cancel_Appointment", 0,  None )
+                #Cancel appointment
+                Character.appointment = None
+                pass            
 
-        elif(Character.Thirst+5 > Character.ThirstLimit and Character.FSM.nextState != Drink and Character.location != "Saloon" and Character.FSM.nextState != Sleep):
+        elif(Character.Thirst+5 > Character.ThirstLimit and Character.FSM.nextState != DrinkingState and Character.location != "Saloon" and Character.FSM.nextState != Sleep):
             print(Character._myID +": I´m thusty!")
-            Character.FSM.SetNextState(Drink)    
-            Character.FSM.ChangeState(walkState)
-        elif(Character.appointment and  Character.FSM.currentState != walkState and  Character.FSM.currentState != HangOut):
+            Character.FSM.SetNextState(DrinkingState)    
+            Character.FSM.ChangeState(WalkingState)
+            if(Character.appointment and Character.appointment.time_ - clock.getHours() < Places.instance.GetDistance(Character.location, Character.appointment.place_)):
+                MessageDispatcher.instance.DispatchMessage(Character._myID, Character.friend,"Cancel_Appointment", 0,  None )
+                Character.appointment = None
+                #Cancel appointment
+                pass    
+        elif(Character.appointment and  Character.FSM.currentState != WalkingState and  Character.FSM.currentState != HangOut):
             print(Character._myID + ": " + Character.location + "<-char location, appointment-> " + Character.appointment.place_+ " appointment time ->" + str(Character.appointment.time_ - clock.getHours()))
             if(Character.appointment.time_ - clock.getHours() <= Places.instance.GetDistance(Character.location, Character.appointment.place_) + 1):
                 print(Character._myID +": Walking to see firend")
                 Character.FSM.SetNextState(HangOut)
-                Character.FSM.ChangeState(walkState)
+                Character.FSM.ChangeState(WalkingState)
 
         elif(Character.Loneliness > Character.LonelyLimit  and not Character.appointment):
             XtraInfo = Appointment( int(clock.getHours()+8) , "Home")
@@ -609,9 +347,11 @@ class globalMiner(State):
           Reciever.appointment = Message.ExtraInfo
       elif (Message.Msg == "see_you_soon_ole_friend"):
           if Reciever.FSM.currentState == HangOut:
-            Reciever.FSM.SetNextState(Work)   
-            Reciever.FSM.SetCurrentState(walkState)
+            Reciever.FSM.SetNextState(WorkingState)   
+            Reciever.FSM.SetCurrentState(WalkingState)
           pass
+      elif (Message.Msg == "Cancel_Appointment"):
+          Reciever.appointment = None
          
           #svara och bli glad 
        
@@ -625,7 +365,7 @@ class globalMiner(State):
 #===========================================================================================================
 #===========================================================================================================
 
-class walkState(State):
+class WalkingState(State):
 
     def Enter(Character):
         
@@ -662,7 +402,7 @@ class walkState(State):
         
 #===========================================================================================================
 #===========================================================================================================
-class wait(State):
+class WaitingState(State):
 
     def Enter(Character):
         pass
@@ -688,9 +428,9 @@ class HangOut(State):
         if EntityManager.instance.GetEntityFromID(Character.friend).FSM.currentState == HangOut:
             print(Character._myID + str(Character.Loneliness) +  ": Catchin up with.. " +  Character.friend)
             Character.incrementLonelinessBy(-10)
-            if (Character.Loneliness < 1):
-                Character.FSM.SetNextState(Work)
-                Character.FSM.ChangeState(walkState) 
+            if (Character.Loneliness < 1 and EntityManager.instance.GetEntityFromID(Character.friend).Loneliness < 1):
+                Character.FSM.SetNextState(WorkingState)
+                Character.FSM.ChangeState(WalkingState) 
                 Character.appointment = None
         else:
              print(Character._myID + str(Character.Loneliness) +  ": Waiting for.. " +  Character.friend)

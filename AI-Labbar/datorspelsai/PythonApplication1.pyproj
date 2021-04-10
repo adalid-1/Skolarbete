@@ -21,7 +21,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Entity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSM.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Message.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="module2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Places.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PythonApplication1.py">
