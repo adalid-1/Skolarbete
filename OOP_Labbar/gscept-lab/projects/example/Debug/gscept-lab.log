@@ -1,0 +1,12 @@
+﻿  BreakoutBall.cpp
+  Cirkel.cpp
+  Shape.cpp
+  Square.cpp
+D:\Git Repo\objektorienterad-programmering - kopia\Objektorienterad programmering\Labb3\gscept-lab\projects\example\code\Square.cpp(10,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Triangle.cpp
+D:\Git Repo\objektorienterad-programmering - kopia\Objektorienterad programmering\Labb3\gscept-lab\projects\example\code\Triangle.cpp(14,38): warning C4305: 'argument': truncation from 'double' to 'float'
+  assignmentapp.cc
+D:\Git Repo\objektorienterad-programmering - kopia\Objektorienterad programmering\Labb3\gscept-lab\projects\example\code\assignmentapp.cc(75,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cc
+  Generating Code...
+  gscept-lab.vcxproj -> D:\Git Repo\objektorienterad-programmering - kopia\Objektorienterad programmering\Labb3\gscept-lab\Debug\Assignment.exe
