@@ -1,15 +1,1 @@
-﻿  glew.c
-  context.c
-  init.c
-  input.c
-  monitor.c
-  wgl_context.c
-  win32_init.c
-  win32_monitor.c
-  win32_time.c
-  win32_tls.c
-  win32_window.c
-  window.c
-  winmm_joystick.c
-  Generating Code...
-  Libraries.vcxproj -> C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab\Debug\Libraries.lib
+﻿  Libraries.vcxproj -> C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab\Debug\Libraries.lib
