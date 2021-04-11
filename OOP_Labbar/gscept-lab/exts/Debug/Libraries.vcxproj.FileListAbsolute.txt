@@ -1,6 +1,0 @@
-D:\Git Repo\objektorienterad-programmering\Objektorienterad programmering\Labb3\gscept-lab\Debug\Libraries.pdb
-D:\Git Repo\objektorienterad-programmering\Objektorienterad programmering\Labb3\gscept-lab\exts\Debug\Libraries.pdb
-D:\Git Repo\objektorienterad-programmering - kopia\Objektorienterad programmering\Labb3\gscept-lab\Debug\Libraries.pdb
-D:\Git Repo\objektorienterad-programmering - kopia\Objektorienterad programmering\Labb3\gscept-lab\exts\Debug\Libraries.pdb
-C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab\Debug\Libraries.pdb
-C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab\exts\Debug\Libraries.pdb
