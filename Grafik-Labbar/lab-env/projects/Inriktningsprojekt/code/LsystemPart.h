@@ -9,13 +9,13 @@
 #include <cstdlib>
 #include <ctime>
 
-class LsystemPart {
+class LsystemRule {
 
 	char predecessor;
 	std::string successor;
 
 public:
-	LsystemPart(char predecessor_, std::string successor_)
+	LsystemRule(char predecessor_, std::string successor_)
 	{
 		predecessor = predecessor_;
 		successor = successor_;
@@ -38,7 +38,7 @@ public:
 		successor = successor_;
 	}
 
-	bool operator==(LsystemPart& other) {
+	bool operator==(LsystemRule& other) {
 		return predecessor == other.getPredecessor() && successor == other.getSuccessor();
 	}
 

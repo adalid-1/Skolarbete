@@ -7,18 +7,7 @@
 #include <cstring>
 #include "imgui.h"
 
-//#include "json.hpp"
-
 #define STRING_BUFFER_SIZE 8192
-//static Lsystem treeGenerator;
-//static bool drawLeaf = false;
-//static int nr = 1;
-//static float AngleStep = 0.1;
-//static int randomStep = 1;
-//static float LengthStep = 0.1;
-//static bool* generateProductions = new bool(false);
-//bool* foo;
-
 
 using namespace Display;
 namespace Example
@@ -41,118 +30,120 @@ bool ImGuiExampleApp::Open()
 	if (this->window->Open())
 	{
 		srand((unsigned)time(0));
-		// set clear color to whatever color you want
+		// set background color
 		glClearColor(0.f, 0.f, 0.f, 0.0f);
 
-		//adding comment 
-
 		//Initial rules for L-system
-		
-		
 		{
-			//Makes nice random trees 
-			/*
-			LsystemPart ad('A', "A[BC]");
-			LsystemPart da('B', "A[EE][C]A");
-			LsystemPart ed('C', "AB[D]");
-			LsystemPart dab('D', "A[EE][C]A");
-			LsystemPart edb('E', "AB[D]");
-			*/
 
-			/*
-			LsystemPart ad('A', "AB[B][C]");
-			LsystemPart da('B', "A[A]");
-			LsystemPart ed('C', "[D][A]");
-			LsystemPart dab('D', "A[A]");
-			LsystemPart edb('E', "AA[B]");
-			*/
-			LsystemPart ad('A', "A[A[A]]A[A]");
-			LsystemPart da('B', "A[A[A]]A[A]");
-			LsystemPart ed('C', "A[A[A]]A[A]");
-			LsystemPart dab('D', "A[A[A]]A[A]");
-			LsystemPart edb('E', "A[A[A]]A[A]");
+			LsystemRule rule1('A', "A[A[A]]A[A]");
+			LsystemRule rule2('B', "A[A[A]]A[A]");
+			LsystemRule rule3('C', "A[A[A]]A[A]");
+			LsystemRule rule4('D', "A[A[A]]A[A]");
+			LsystemRule rule5('E', "A[A[A]]A[A]");
 
-			LsystemPart aa('A', "AA[A[A]]A[A]");
-			LsystemPart dd('B', "AA[A[A]]A[A]");
-			LsystemPart ee('C', "AA[A[A]]A[A]");
-			LsystemPart ddd('D', "AA[A[A]]A[A]");
-			LsystemPart eee('E', "AA[A[A]]A[A]");
+			LsystemRule rule6('A', "AA[A[A]]A[A]");
+			LsystemRule rule7('B', "AA[A[A]]A[A]");
+			LsystemRule rule8('C', "AA[A[A]]A[A]");
+			LsystemRule rule9('D', "AA[A[A]]A[A]");
+			LsystemRule rule10('E', "AA[A[A]]A[A]");
 
 
-			lista.push_back(ad);
-			lista.push_back(da);
-			lista.push_back(ed);
-			lista.push_back(dab);
-			lista.push_back(edb);
-			lista.push_back(ad);
-			lista.push_back(da);
-			lista.push_back(ed);
-			lista.push_back(dab);
-			lista.push_back(edb);
-			lista.push_back(ad);
-			lista.push_back(da);
-			lista.push_back(ed);
-			lista.push_back(dab);
-			lista.push_back(edb);
+			lista.push_back(rule1);
+			lista.push_back(rule2);
+			lista.push_back(rule3);
+			lista.push_back(rule4);
+			lista.push_back(rule5);
+			lista.push_back(rule1);
+			lista.push_back(rule2);
+			lista.push_back(rule3);
+			lista.push_back(rule4);
+			lista.push_back(rule5);
+			lista.push_back(rule1);
+			lista.push_back(rule2);
+			lista.push_back(rule3);
+			lista.push_back(rule4);
+			lista.push_back(rule5);
 
-			//lista.push_back(aa);
-			//lista.push_back(dd);
-			//lista.push_back(ee);
-			//lista.push_back(ddd);
-			//lista.push_back(eee);
-			//Spara
-		//	LsystemPart simple1('A', "A[B][D]A");
-		//	LsystemPart simple2('B', "BA");
-			//LsystemPart simple3('C', "CA");a
-			//LsystemPart simple4('D', "DA");
-		//	LsystemPart simple5('E', "EA");
-			//{ { "A", "A[B]A[C]" }, { "B", "BA" }, { "C", "CA" } };
-			LsystemPart simple1('A', "A[B][D]A[C][E]");
-			LsystemPart simple2('B', "ABA");
-			LsystemPart simple3('C', "ACA");
-			LsystemPart simple4('D', "ADA");
-			LsystemPart simple5('E', "AEA");
+
+			LsystemRule simple1('A', "A[B][D]A[C][E]");
+			LsystemRule simple2('B', "ABA");
+			LsystemRule simple3('C', "ACA");
+			LsystemRule simple4('D', "ADA");
+			LsystemRule simple5('E', "AEA");
 
 			lista2.push_back(simple1);
 			lista2.push_back(simple2);
 			lista2.push_back(simple3);
 			lista2.push_back(simple4);
 			lista2.push_back(simple5);
+
+			//commented out stuff that has been used when testing 
+			{
+
+
+				//Makes nice random trees 
+				/*
+				LsystemPart ad('A', "A[BC]");
+				LsystemPart da('B', "A[EE][C]A");
+				LsystemPart ed('C', "AB[D]");
+				LsystemPart dab('D', "A[EE][C]A");
+				LsystemPart edb('E', "AB[D]");
+				*/
+
+				/*
+				LsystemPart ad('A', "AB[B][C]");
+				LsystemPart da('B', "A[A]");
+				LsystemPart ed('C', "[D][A]");
+				LsystemPart dab('D', "A[A]");
+				LsystemPart edb('E', "AA[B]");
+				*/
+				//lista.push_back(aa);
+				//lista.push_back(dd);
+				//lista.push_back(ee);
+				//lista.push_back(ddd);
+				//lista.push_back(eee);
+				//Spara
+				//	LsystemPart simple1('A', "A[B][D]A");
+				//	LsystemPart simple2('B', "BA");
+				//LsystemPart simple3('C', "CA");a
+				//LsystemPart simple4('D', "DA");
+				//	LsystemPart simple5('E', "EA");
+				//{ { "A", "A[B]A[C]" }, { "B", "BA" }, { "C", "CA" } };
+
+			}
+
 		}
-		//generera regler
-		treeGenerator.setRules(treeGenerator.generateProductions(lista));
+
 		//skicka in statiska regler
 		treeGenerator.setRules(lista2);
+
 		treeGenerator.setN(2);
+		//Generates the segments
 		treeGenerator.buildTree(treeGenerator.getN(), 0, 0);
 		Gnode = new GraphicsNode();
-		//Making resources
+		
+		//Setting up resources for the tree graphicsnode
 		Gnode->pointerSetup();
-		//Setting up mesh, texture and shader resources
-		//Gnode.setup();
-		
-		
+
 		Gnode->setupAndGenerateTree(treeGenerator.lSysInt.segmentList, shadedSmooth);
 		//Making resources
 		LeafNode.pointerSetup();
-		//Setting up mesh, texture and shader resources
+		//Setting up resources for the leaf graphicsnodes
 		LeafNode.setup("resources/obj/TestOBJ.obj", "resources/textures/shrek.jpg");
 
 		//Setup light
 		Light.position.setXYZW(0.0f, 3.0f, 12.f, 1);
 		Light.color.setXYZW(1.0f, 1.0f, 1.0f, 1);
 
-
-		//Setup graphics 
-		treeGenerator.setupGraphicsNodes(nodeList, LeafList, LeafNode, *Gnode, 0, 0);
+		//Generates leaf graphics nodes  
+		treeGenerator.setupLeafNodes(LeafList, LeafNode);
 	
-
 		// set ui rendering function
 		this->window->SetUiRender([this]()
 		{
 			this->RenderUI();
 		});
-
 
 		return true;
 	}
@@ -384,7 +375,6 @@ ImGuiExampleApp::Run()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		//Don´t really know
 		this->window->Update();
 		Gnode->ShaderO->UseProgram();
 		//Sending stuff to shaders
@@ -396,12 +386,7 @@ ImGuiExampleApp::Run()
 
 		//draw 
 		Gnode->draw();
-		//for (int i = 0; i < nodeList.size(); i++) {
 
-		//	
-		//	nodeList[i].draw();
-		//}
-	
 		//Swap to leaf shader resoruce
 		LeafNode.ShaderO->UseProgram();
 		LeafNode.ShaderO->ModMat4fv("view", myCam.view);
@@ -415,7 +400,6 @@ ImGuiExampleApp::Run()
 			}
 		}
 
-		
 		// transfer new frame to window
 		this->window->SwapBuffers();
 	}
@@ -428,25 +412,7 @@ void ImGuiExampleApp::RenderUI()
 		bool show = true;
 		// create a new window
 		ImGui::Begin("Tree UI", &show, ImGuiWindowFlags_NoSavedSettings);
-
-		// create text editors for shader code
-		//ImGui::InputTextMultiline("Vertex Shader", Gnode->ShaderO->vsBuffer, STRING_BUFFER_SIZE, ImVec2(-1.0f, ImGui::GetTextLineHeight() * 16),
-		//	ImGuiInputTextFlags_AllowTabInput);
-		
-		//ImGui::InputTextMultiline("Pixel Shader", Gnode->ShaderO->fsBuffer, STRING_BUFFER_SIZE, ImVec2(-1.0f, ImGui::GetTextLineHeight() * 16),
-		//	ImGuiInputTextFlags_AllowTabInput);
-
-		// apply button
-		//if (ImGui::Button("Apply"))
-		//{
-		//	// if pressed we compile the shaders
-		//	Gnode->ShaderO->CompileShaders();
-		//	Gnode->ShaderO->UseProgram();
-		//	LeafNode.ShaderO->CompileShaders();
-		//	LeafNode.ShaderO->UseProgram();
-
-		//}
-			
+	
 		ImGui::Text("Value of N         ");
 		ImGui::SameLine();
 		if (ImGui::Button("AddN"))
@@ -531,23 +497,6 @@ void ImGuiExampleApp::RenderUI()
 
 		}
 
-		//if (ImGui::Button("AddNr"))
-		//{
-		//	// if pressed we compile the shaders
-		//	nr++;
-
-		//}
-		//if (ImGui::Button("ResetNr"))
-		//{
-		//	// if pressed we compile the shaders
-		//	nr = 0;
-
-		//}
-	
-	
-
-	//	ImGui::SameLine();
-
 		// apply button
 		if (ImGui::Button("Apply"))
 		{
@@ -568,7 +517,7 @@ void ImGuiExampleApp::RenderUI()
 
 		if (ImGui::Button("Toggle leaves"))
 		{
-			// if pressed we compile the shaders
+			
 			if (drawLeaf) { drawLeaf = false; }
 			else { drawLeaf = true; }
 
@@ -576,12 +525,6 @@ void ImGuiExampleApp::RenderUI()
 		
 		ImGui::Checkbox("Generate productions", generateProductions);
 		ImGui::Checkbox("Shaded smooth", shadedSmooth);
-
-		if (Gnode->ShaderO->compilerLog.length())
-		{
-			// if compilation produced any output we display it here
-			ImGui::TextWrapped(Gnode->ShaderO->compilerLog.c_str());
-		}
 
 		if (ImGui::Button("Export model"))
 		{
@@ -595,18 +538,7 @@ void ImGuiExampleApp::RenderUI()
 	}
 }
 
-
-void ImGuiExampleApp::setupTreeGraphicsNode() {
-
-
-}
-
 void ImGuiExampleApp::rebuildModel() {
-
-
-
-	//delete Gnode;
-
 
 	Gnode = new GraphicsNode();
 	treeGenerator.buildTree(treeGenerator.getN(), 0, 0);
@@ -614,7 +546,13 @@ void ImGuiExampleApp::rebuildModel() {
 
 	Gnode->setupAndGenerateTree(treeGenerator.lSysInt.segmentList, *shadedSmooth);
 
-	treeGenerator.setupGraphicsNodes(nodeList, LeafList, LeafNode, *Gnode, 0, 0);
+	treeGenerator.setupLeafNodes(LeafList, LeafNode);
 }
 
 } // namespace Example
+
+
+
+
+
+

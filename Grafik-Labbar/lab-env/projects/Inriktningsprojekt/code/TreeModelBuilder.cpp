@@ -4,7 +4,7 @@ void TreeModelBuilder::buildTreeModel(std::vector<Segment> treeSegments, bool sh
 {
 	indices.clear();
 	vertices.clear();
-	//Gör en cylinder för varje segment och pusha back den i vertices 
+	//Make a cylinder for each Segment and put the vertices/indices in their buffers
 	for (int i = 0; i < treeSegments.size(); i++) {
 		cylinder = new Cylinder(treeSegments[i].thickness , treeSegments[i].thickness, treeSegments[i].length, 6, 6, shadedSmooth);
 		cylinder->formatData(indices, vertices, i, treeSegments[i].transform);

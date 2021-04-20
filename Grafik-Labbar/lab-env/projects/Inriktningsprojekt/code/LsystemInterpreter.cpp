@@ -242,8 +242,7 @@ void LsystemInterpreter::calculatePoints(int randrangeAngle, int branchRandRange
 		segmentList[segment].thickness = (thickRange / ((2 + segmentList[segment].thickness) * 10 ));
 	}
 
-	successorsMain = checkSuccessors(1);
-	std::cout << "successors main: " << successorsMain << std::endl;
+
 }
 
 void LsystemInterpreter::addSegment(Segment s)

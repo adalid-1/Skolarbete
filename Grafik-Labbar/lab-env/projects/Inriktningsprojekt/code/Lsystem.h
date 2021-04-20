@@ -28,10 +28,7 @@ class Lsystem {
 	float degrees;
 	//Starting variable
 	char axiom;
-	//All variables
-	char variables[2] = { 'A', 'B' };
-	//Rules example: A ->  AB, B -> BA[B]
-	std::vector <  LsystemPart  > rules;
+	std::vector <  LsystemRule  > rules;
 	//Sentence built from the rules
 	std::string sentence;
 	//generations
@@ -47,8 +44,7 @@ class Lsystem {
 	std::string applyRulesToSentence(std::string sentence);
 
 
-	//Input: S(set of selected sub - structures)
-//Output : P(set of generated productions)
+
 
 	float randomNr(float input, int range);
 
@@ -58,19 +54,24 @@ public:
 	Lsystem();
 	//Builds the sentence from the rules
 	void buildTree(int n, int angleRandRange, int branchRandRange);
+	void printRules();
+	void printSentence();
 	//Getters
 	std::string getSentence();
-	std::vector<LsystemPart> getRules() {
+	std::vector<LsystemRule> getRules() {
 		return rules;
 	}
 
 	LsystemInterpreter lSysInt; 
-	void setRules(std::vector<LsystemPart> ruleSet);
+	void setRules(std::vector<LsystemRule> ruleSet);
 	void setN(int newN);
 	int getN();
 
-	std::vector<LsystemPart> generateProductions(std::vector<LsystemPart> inputSet);
-	void setupGraphicsNodes(std::vector<GraphicsNode>& nodeList, std::vector<GraphicsNode>& LeafList, GraphicsNode LeafNode, GraphicsNode Gnode, int randAngleRange, int randLengthRange);
+	//Input: S(set of selected sub - structures)
+	//Output : P(set of generated productions)
+	std::vector<LsystemRule> generateProductions(std::vector<LsystemRule> inputSet);
+
+	void setupLeafNodes(std::vector<GraphicsNode>& LeafList, GraphicsNode LeafNode);
 
 };
 

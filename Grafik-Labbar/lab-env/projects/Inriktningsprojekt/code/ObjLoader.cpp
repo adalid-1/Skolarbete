@@ -30,8 +30,6 @@ void ObjLoader::loadOBJ(const char* filename, vector<GLuint>& indices, vector<fl
 	if (!in_file.is_open())
 	{
 		throw "ERROR::OBJLOADER::Could not open file.";
-
-
 	}
 	//Read a line at a time
 	while (std::getline(in_file, line)){

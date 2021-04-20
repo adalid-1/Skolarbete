@@ -22,7 +22,7 @@
 #include "LsystemPart.h"
 #include <vector>
 
-class LsystemPart;
+class LsystemRule;
 namespace Example
 {
 class ImGuiExampleApp : public Core::App
@@ -37,8 +37,8 @@ public:
 	bool Open();
 	/// run app
 	void Run();
-	std::vector<LsystemPart> lista2;
-	std::vector<LsystemPart> lista;
+	std::vector<LsystemRule> lista2;
+	std::vector<LsystemRule> lista;
 
 	std::vector<GraphicsNode> nodeList;
 	std::vector<GraphicsNode> LeafList;

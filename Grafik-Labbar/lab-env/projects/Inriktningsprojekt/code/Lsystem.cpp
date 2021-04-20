@@ -6,7 +6,7 @@ std::string Lsystem::getSentence() {
 	return sentence;
 }
 
-void Lsystem::setRules(std::vector<LsystemPart> ruleSet)
+void Lsystem::setRules(std::vector<LsystemRule> ruleSet)
 {
 	rules = ruleSet;
 }
@@ -21,12 +21,12 @@ int Lsystem::getN()
 	return n;
 }
 
-std::vector<LsystemPart> Lsystem::generateProductions(std::vector<LsystemPart> inputSet)
+std::vector<LsystemRule> Lsystem::generateProductions(std::vector<LsystemRule> inputSet)
 {
 	int n1 = inputSet.size();
 
 	//Remove duplicates from vector
-	std::vector<LsystemPart> inputSetUnique = inputSet;
+	std::vector<LsystemRule> inputSetUnique = inputSet;
 	inputSetUnique.erase(std::unique(inputSetUnique.begin(), inputSetUnique.end()), inputSetUnique.end());
 
 	int n2 = inputSet.size();
@@ -46,12 +46,12 @@ std::vector<LsystemPart> Lsystem::generateProductions(std::vector<LsystemPart> i
 	return inputSetUnique;
 }
 
-void Lsystem::setupGraphicsNodes(std::vector<GraphicsNode>& nodeList, std::vector<GraphicsNode>& LeafList, GraphicsNode LeafNode, GraphicsNode Gnode, int randAngleRange, int randLengthRange)
+void Lsystem::setupLeafNodes(std::vector<GraphicsNode>& LeafList, GraphicsNode LeafNode)
 {
-	nodeList.clear();
+	
 	LeafList.clear();
-	//Making leaf graphics nodes that share mesh and textures
 
+	//Making leaf graphics nodes that share mesh and textures
 	for (int i = 0; i <lSysInt.segmentList.size(); i++) {
 		if (lSysInt.segmentList[i].hasLeaf) {
 			GraphicsNode tempLeaf = GraphicsNode();
@@ -70,13 +70,6 @@ void Lsystem::setupGraphicsNodes(std::vector<GraphicsNode>& nodeList, std::vecto
 		std::cout << LeafList.size() << std::endl;
 		
 	}
-	//print out the sentence
-	std::cout << (getSentence()) << std::endl;
-	//print out the rules
-	for (int i = 0; i < getRules().size(); i++) {
-
-		std::cout << "Rule nr: " << i << " " << getRules()[i].getSuccessor() << " " << getRules()[i].getPredecessor() << std::endl;
-	}
 
 }
 
@@ -92,8 +85,6 @@ float Lsystem::randomNr(float input, int range)
 }
 
 Lsystem::Lsystem() {
-	
-
 	axiom = 'A';
 	sentence = axiom;
 	rules;
@@ -145,4 +136,19 @@ void Lsystem::buildTree(int n, int angleRandRange, int branchRandRange )
 	}
 	lSysInt.setSentence(sentence);
 	lSysInt.calculatePoints(angleRandRange, branchRandRange);
+}
+
+
+void Lsystem::printRules() {
+
+	//print out the rules
+	for (int i = 0; i < getRules().size(); i++) {
+
+		std::cout << "Rule nr: " << i << " " << getRules()[i].getSuccessor() << " " << getRules()[i].getPredecessor() << std::endl;
+	}
+}
+
+void Lsystem::printSentence() {
+	//print out the sentence
+	std::cout << (getSentence()) << std::endl;
 }

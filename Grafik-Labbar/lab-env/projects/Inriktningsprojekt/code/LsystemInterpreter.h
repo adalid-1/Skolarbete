@@ -12,7 +12,7 @@
 struct Segment {
 public:
 
-	//Position at start of segment
+	//Position at start of segment (not used)
 	Vector4D position0;
 
 	//Position at end of segment
@@ -30,7 +30,7 @@ public:
 	//
 	bool hasLeaf = false;
 
-	//Index to predecessor
+	//Index to predecessor 
 	int predecessor = -1;
 
 	//Index to branches 
