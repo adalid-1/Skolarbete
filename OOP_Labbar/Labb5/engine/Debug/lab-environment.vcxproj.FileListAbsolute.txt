@@ -1,0 +1,6 @@
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab\Debug\lab-environment.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab\engine\Debug\lab-environment.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab5\Debug\lab-environment.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab5\engine\Debug\lab-environment.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\Debug\lab-environment.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\engine\Debug\lab-environment.pdb

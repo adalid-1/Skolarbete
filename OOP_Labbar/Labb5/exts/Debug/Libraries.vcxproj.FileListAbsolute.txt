@@ -1,0 +1,6 @@
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab\exts\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab5\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\gscept-lab5\exts\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\exts\Debug\Libraries.pdb
