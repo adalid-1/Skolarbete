@@ -40,7 +40,7 @@ class Map:
         return self.pathfindingGraph[index]
     #Returns distance 
     def getHeuristic(self,_start, _current, _to):
-        tileDistance(getFromGraph(_start),getFromGraph(_current), getFromGraph(_to))
+        tileDistanceFromStartAndGoal(getFromGraph(_start),getFromGraph(_current), getFromGraph(_to))
         pass
 
 #returnerar Sizes[0] = Antal chars i listan, [1] = Antal lines [2] = antal chars per line 
@@ -142,7 +142,7 @@ def pathfindingLoopAstar(start, goal, tileList):
 
 #=====================================================================
 # A-star heuristic function, if heuristic is forcemade very low the A-star practically turns into a depth first search
-def tileDistance(tile, start, goal):
+def tileDistanceFromStartAndGoal(tile, start, goal):
     
        
        Xcost = pow(abs(tile.middle[0] - start.middle[0]), 2)
@@ -281,6 +281,11 @@ def buildGraph2(fileName):
 
     GameMap = tileList
 
+    for tile in tileList:
+      #  MakeDiagonalsUnwalkable(tileList, tile)
+        CalculateCosts(tileList, tile, start, goal, diagonalPenalty)
+
+
     return tileList
 
 
@@ -352,3 +357,54 @@ def assbutt(tileList):
             tile.adjacencyIndexes = adjacencyArray2
 
         #___________________________________________________________________}
+
+def MakeDiagonalsUnwalkable(tileList, tile):
+    
+    if tile.tileType != 'X':
+
+        if tile.adjacencyIndexes[1] != -1 and tileList[tile.adjacencyIndexes[1]].tileType == 'X':
+            tile.adjacencyIndexes[1] = -1
+            tile.adjacencyIndexes[0] = -1
+            tile.adjacencyIndexes[2] = -1
+            pass
+        #left
+        if tile.adjacencyIndexes[3] != -1 and tileList[tile.adjacencyIndexes[3]].tileType == 'X':
+            tile.adjacencyIndexes[3] = -1
+            tile.adjacencyIndexes[0] = -1
+            tile.adjacencyIndexes[5] = -1
+            pass
+        #right
+        if tile.adjacencyIndexes[4] != -1 and tileList[tile.adjacencyIndexes[4]].tileType == 'X':
+            tile.adjacencyIndexes[4] = -1
+            tile.adjacencyIndexes[2] = -1
+            tile.adjacencyIndexes[7] = -1
+            pass
+
+
+        if tile.adjacencyIndexes[6] != -1 and tileList[tile.adjacencyIndexes[6]].tileType == 'X':
+            tile.adjacencyIndexes[6] = -1
+            tile.adjacencyIndexes[5] = -1
+            tile.adjacencyIndexes[7] = -1
+            pass
+            
+
+    return 
+#Funkar inte att pre räkna ut heuristics så här när det inte är bestämda Start och Mål 
+def CalculateCosts(tileList, tile, start, goal, diagonalPenalty):
+    
+    adjacencyArray2 = []
+    #adds cost for traversing tiles, [index, basecost, heuristic]
+    for index in tile.adjacencyIndexes:
+        adjacencyArray2.append([index, 1 , tileDistanceFromStartAndGoal(tileList[index],tileList[start],tileList[goal])])
+
+                
+    print(adjacencyArray2)
+    #add diagonal penalty to diagonals
+    adjacencyArray2[0][1] += diagonalPenalty
+    adjacencyArray2[2][1] += diagonalPenalty
+    adjacencyArray2[5][1] += diagonalPenalty
+    adjacencyArray2[7][1] += diagonalPenalty
+
+    tile.adjacencyIndexes = adjacencyArray2
+    
+    return
