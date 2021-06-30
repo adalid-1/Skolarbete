@@ -281,9 +281,9 @@ def buildGraph2(fileName):
 
     GameMap = tileList
 
-    for tile in tileList:
+   # for tile in tileList:
       #  MakeDiagonalsUnwalkable(tileList, tile)
-        CalculateCosts(tileList, tile, start, goal, diagonalPenalty)
+        #CalculateCosts(tileList, tile, start, goal, diagonalPenalty)
 
 
     return tileList
