@@ -71,7 +71,6 @@ ImGuiExampleApp::Open()
 		// compile the shaders in the buffers
 		this->CompileShaders();
 
-
 		// set ui rendering function
 		this->window->SetUiRender([this]()
 		{
