@@ -16,7 +16,7 @@ void GraphicsNode::pointerSetup()
 void GraphicsNode::setup()
 {
 	//load obj 
-	meshR->setupModel("resources/obj/cottage_obj.obj");
+	meshR->setupModel("../resources/obj/cottage_obj.obj");
 	//Sets up vao, index och vertexbuffer
 	meshR->SetupVertexArrayObject();
 	//Setting up texture
