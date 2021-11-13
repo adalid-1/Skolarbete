@@ -1,0 +1,24 @@
+﻿  assignmentapp.cc
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\assignmentapp.cc(62,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\assignmentapp.cc(119,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\assignmentapp.cc(130,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\assignmentapp.cc(141,22): warning C4018: '<': signed/unsigned mismatch
+  Circle.cpp
+  main.cc
+  Matrix2D.cpp
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Matrix2D.cpp(48,72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Matrix2D.cpp(48,58): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Matrix2D.cpp(48,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Matrix2D.cpp(48,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Matrix2D.cpp(55,67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Matrix2D.cpp(55,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Matrix2D.cpp(55,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Matrix2D.cpp(55,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Shape.cpp
+  Square.cpp
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Square.cpp(10,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Triangle.cpp
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\projects\example\code\Triangle.cpp(14,34): warning C4305: 'argument': truncation from 'double' to 'float'
+  Vector2D.cpp
+  Generating Code...
+  gscept-lab.vcxproj -> C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\Debug\Assignment.exe

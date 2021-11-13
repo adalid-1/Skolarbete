@@ -1,0 +1,4 @@
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb44\gscept-lab\Debug\lab-environment.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb44\gscept-lab\engine\Debug\lab-environment.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\Debug\lab-environment.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb4\gscept-lab\engine\Debug\lab-environment.pdb

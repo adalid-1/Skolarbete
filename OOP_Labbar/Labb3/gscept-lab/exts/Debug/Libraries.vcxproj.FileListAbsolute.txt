@@ -1,0 +1,6 @@
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\-uploadMB.com-Labb3\( uploadMB.com ) Labb3\Labb3\gscept-lab\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\-uploadMB.com-Labb3\( uploadMB.com ) Labb3\Labb3\gscept-lab\exts\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb3\gscept-lab\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb3\gscept-lab\exts\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb3 - klar\gscept-lab\Debug\Libraries.pdb
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb3 - klar\gscept-lab\exts\Debug\Libraries.pdb

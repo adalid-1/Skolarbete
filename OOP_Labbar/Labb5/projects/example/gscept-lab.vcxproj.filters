@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="code\main.cc">
+      <Filter>Main Application</Filter>
+    </ClCompile>
+    <ClCompile Include="code\assignmentapp.cc">
+      <Filter>Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Shape.cpp">
+      <Filter>Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Square.cpp">
+      <Filter>Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Vector2D.cpp">
+      <Filter>Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Triangle.cpp">
+      <Filter>Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix2D_v2.cpp">
+      <Filter>Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D_v2.cpp">
+      <Filter>Assignment</Filter>
+    </ClCompile>
+    <ClCompile Include="code\Circle.cpp">
+      <Filter>Assignment</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assignment">
+      <UniqueIdentifier>{f139e941-0bbe-43bb-a628-1444be7f4624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main Application">
+      <UniqueIdentifier>{c5c72b36-2654-49d6-9c71-954c07cc9346}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="code\assignmentapp.h">
+      <Filter>Assignment</Filter>
+    </ClInclude>
+    <ClInclude Include="code\Shape.h">
+      <Filter>Assignment</Filter>
+    </ClInclude>
+    <ClInclude Include="code\Square.h">
+      <Filter>Assignment</Filter>
+    </ClInclude>
+    <ClInclude Include="code\Vector2D.h">
+      <Filter>Assignment</Filter>
+    </ClInclude>
+    <ClInclude Include="code\Triangle.h">
+      <Filter>Assignment</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix2D_v2.h">
+      <Filter>Assignment</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D_v2.h">
+      <Filter>Assignment</Filter>
+    </ClInclude>
+    <ClInclude Include="code\Circle.h">
+      <Filter>Assignment</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

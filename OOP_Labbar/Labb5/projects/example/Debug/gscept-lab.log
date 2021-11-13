@@ -1,0 +1,26 @@
+﻿  Matrix2D_v2.cpp
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(83,75): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(83,61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(83,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(83,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(90,67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(90,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(90,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(90,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Vector2D_v2.cpp
+  Circle.cpp
+  Shape.cpp
+  Square.cpp
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\code\Square.cpp(10,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Triangle.cpp
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\code\Triangle.cpp(14,38): warning C4305: 'argument': truncation from 'double' to 'float'
+  assignmentapp.cc
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\code\assignmentapp.cc(49,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\code\assignmentapp.cc(57,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\code\assignmentapp.cc(128,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\code\assignmentapp.cc(139,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\code\assignmentapp.cc(151,22): warning C4018: '<': signed/unsigned mismatch
+  main.cc
+  Generating Code...
+C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\projects\example\Matrix2D_v2.cpp(302): warning C4715: 'Matrix2D_v2::operator==': not all control paths return a value
+  gscept-lab.vcxproj -> C:\Users\Adam\Documents\GIT REPO\Skolarbete\OOP_Labbar\Labb5\Debug\Assignment.exe
