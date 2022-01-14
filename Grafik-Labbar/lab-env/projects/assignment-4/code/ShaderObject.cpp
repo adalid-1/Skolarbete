@@ -14,8 +14,8 @@ ShaderObject::ShaderObject() : vertexShader(0), pixelShader(0), program(0)
 void ShaderObject::setup()
 {
 	//Load shaders 
-	LoadFromFile("resources/shaders2/VertexShader.txt", vertShaderStr);
-	LoadFromFile("resources/shaders2/FragmentShader.cpp", fragShaderStr);
+	LoadFromFile("../resources/shaders2/VertexShader.cpp", vertShaderStr);
+	LoadFromFile("../resources/shaders2/FragmentShader.cpp", fragShaderStr);
 
 	vs = vertShaderStr.c_str();
 	ps = fragShaderStr.c_str();

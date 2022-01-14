@@ -499,50 +499,66 @@ def buildGraph2(fileName):
       
     #___________________________________________________________________
 #above
-    
     for tile in tileList:
-        if tile.tileType != 'X':
-
-            if tile.adjacencyIndexes[1] != -1 and tileList[tile.adjacencyIndexes[1]].tileType == 'X':
-                tile.adjacencyIndexes[1] = -1
-                tile.adjacencyIndexes[0] = -1
-                tile.adjacencyIndexes[2] = -1
-                pass
-            #left
-            if tile.adjacencyIndexes[3] != -1 and tileList[tile.adjacencyIndexes[3]].tileType == 'X':
-                tile.adjacencyIndexes[3] = -1
-                tile.adjacencyIndexes[0] = -1
-                tile.adjacencyIndexes[5] = -1
-                pass
-            #right
-            if tile.adjacencyIndexes[4] != -1 and tileList[tile.adjacencyIndexes[4]].tileType == 'X':
-                tile.adjacencyIndexes[4] = -1
-                tile.adjacencyIndexes[2] = -1
-                tile.adjacencyIndexes[7] = -1
-                pass
-
-
-            if tile.adjacencyIndexes[6] != -1 and tileList[tile.adjacencyIndexes[6]].tileType == 'X':
-                tile.adjacencyIndexes[6] = -1
-                tile.adjacencyIndexes[5] = -1
-                tile.adjacencyIndexes[7] = -1
-                pass
-            
-            adjacencyArray2 = []
-            for index in tile.adjacencyIndexes:
-                adjacencyArray2.append([index, 1 , tileDistance(tileList[index],tileList[start],tileList[goal])])
-
-                
-            print(adjacencyArray2)
-            adjacencyArray2[0][1] += diagonalPenalty
-            adjacencyArray2[2][1] += diagonalPenalty
-            adjacencyArray2[5][1] += diagonalPenalty
-            adjacencyArray2[7][1] += diagonalPenalty
-
-            tile.adjacencyIndexes = adjacencyArray2
+        MakeDiagonalsUnwalkable(tileList, tile)
+        CalculateCosts(tileList, tile, start, goal, diagonalPenalty)
 
         #___________________________________________________________________
     return tileList
+
+
+
+
+def MakeDiagonalsUnwalkable(tileList, tile):
+    
+    if tile.tileType != 'X':
+
+        if tile.adjacencyIndexes[1] != -1 and tileList[tile.adjacencyIndexes[1]].tileType == 'X':
+            tile.adjacencyIndexes[1] = -1
+            tile.adjacencyIndexes[0] = -1
+            tile.adjacencyIndexes[2] = -1
+            pass
+        #left
+        if tile.adjacencyIndexes[3] != -1 and tileList[tile.adjacencyIndexes[3]].tileType == 'X':
+            tile.adjacencyIndexes[3] = -1
+            tile.adjacencyIndexes[0] = -1
+            tile.adjacencyIndexes[5] = -1
+            pass
+        #right
+        if tile.adjacencyIndexes[4] != -1 and tileList[tile.adjacencyIndexes[4]].tileType == 'X':
+            tile.adjacencyIndexes[4] = -1
+            tile.adjacencyIndexes[2] = -1
+            tile.adjacencyIndexes[7] = -1
+            pass
+
+
+        if tile.adjacencyIndexes[6] != -1 and tileList[tile.adjacencyIndexes[6]].tileType == 'X':
+            tile.adjacencyIndexes[6] = -1
+            tile.adjacencyIndexes[5] = -1
+            tile.adjacencyIndexes[7] = -1
+            pass
+            
+
+    return 
+#måste göras per tile
+def CalculateCosts(tileList, tile, start, goal, diagonalPenalty):
+    
+    adjacencyArray2 = []
+    #adds cost for traversing tiles, [index, basecost, heuristic]
+    for index in tile.adjacencyIndexes:
+        adjacencyArray2.append([index, 1 , tileDistance(tileList[index],tileList[start],tileList[goal])])
+
+                
+    print(adjacencyArray2)
+    #add diagonal penalty to diagonals
+    adjacencyArray2[0][1] += diagonalPenalty
+    adjacencyArray2[2][1] += diagonalPenalty
+    adjacencyArray2[5][1] += diagonalPenalty
+    adjacencyArray2[7][1] += diagonalPenalty
+
+    tile.adjacencyIndexes = adjacencyArray2
+    
+    return
 
 def main():
 
