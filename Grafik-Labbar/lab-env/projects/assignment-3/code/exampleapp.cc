@@ -71,7 +71,6 @@ ImGuiExampleApp::Open()
 		// compile the shaders in the buffers
 		this->CompileShaders();
 
-
 		// set ui rendering function
 		this->window->SetUiRender([this]()
 		{
@@ -91,7 +90,7 @@ ImGuiExampleApp::Run()
 	MeshResource* meshList = new MeshResource;
 
 	MeshResource mesh;
-	mesh.generateCube(0.1f);
+	mesh.generateCube(0.01f);
 	mesh.SetupVertexArrayObject();
 	
 	//Setting up texture

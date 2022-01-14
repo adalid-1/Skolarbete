@@ -16,7 +16,7 @@ public:
 	void setup();
 	void activate();
 	void setPath(const char* newPath);
-	const char* path = "resources/textures/wood3.jpg";
+	const char* path = "../resources/textures/wood3.jpg";
 	void LoadFromFile(const char* fileName);
 
 	TextureResource();

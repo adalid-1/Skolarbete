@@ -62,14 +62,15 @@ void MeshResource::SetupVertexArrayObject()
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
 
+
 	//Setup vertex and indexbuffer
 	SetupVertexBuffer();
 	SetupIndexBuffer();
 
 	//Unbind vao
-	glBindVertexArray(0);
-	glDeleteBuffers(1, &vbo);
-	glDeleteBuffers(1, &ibo);
+	//glBindVertexArray(0);
+	//glDeleteBuffers(1, &vbo);
+	//glDeleteBuffers(1, &ibo);
 }
 
 void MeshResource::cleanBuffers()
@@ -177,5 +178,7 @@ void MeshResource::generateCube(float sideLen)
 		1, 1
 
 	} };
+
+	//std::cout << (*vbuf)[2] << std::endl;
 }
 
