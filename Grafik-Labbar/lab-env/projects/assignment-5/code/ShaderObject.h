@@ -10,8 +10,8 @@
 class ShaderObject {
 public:
 	//Paths for loading from file
-	const char* vsPath = "resources/shaders/VertexShader.cpp";
-	const char* fsPath = "resources/shaders/FragmentShader.cpp";
+	const char* vsPath = "../resources/shaders/VertexShader.cpp";
+	const char* fsPath = "../resources/shaders/FragmentShader.cpp";
 	void setVsPath(const char* path);
 	void setFsPath(const char* path);
 

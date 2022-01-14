@@ -68,9 +68,9 @@ void MeshResource::SetupVertexArrayObject()
 	SetupIndexBuffer();
 
 	//Unbind vao
-	glBindVertexArray(0);
-	glDeleteBuffers(1, &vbo);
-	glDeleteBuffers(1, &ibo);
+	//glBindVertexArray(0);
+	//glDeleteBuffers(1, &vbo);
+	//glDeleteBuffers(1, &ibo);
 }
 
 void MeshResource::cleanBuffers()
