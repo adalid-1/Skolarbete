@@ -177,7 +177,7 @@ void MeshResource::generateCube(float sideLen)
 void MeshResource::setupModel(ObjLoader& objL)
 {
 	//objL.loadOBJ("TestOBJ.obj", indexData, vbufferData);
-	objL.loadOBJ("resources/obj/cottage_obj.obj", indexData, vbufferData);
+	objL.loadOBJ("../resources/obj/cottage_obj.obj", indexData, vbufferData);
 	buf = vbufferData.data();
 	ibuf = indexData.data();
 	VbufferLen = GLuint(vbufferData.size());
