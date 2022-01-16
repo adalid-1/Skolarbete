@@ -5,7 +5,7 @@ from Pathfinding import *
 def main():
     print("Hello")
     weightedGraph= buildGraph2("Karta Laboration 2.txt")
-    window = GraphWin("Cool Rts game", 1440, 900)
+    window = GraphWin("Cool Rts game", 1440, 1000)
     drawMap(weightedGraph, window)
     
     #Finds the start and goal

@@ -70,13 +70,15 @@ ground = None
 for unit in variables['map']:
 	if unit['name'] == 'tree':
 		tree = unit
-	elif unit['name'] == 'charcoal':
-		charcoal = unit
-	elif unit['name'] == 'ironOre':
-		ironOre = unit
-	elif unit['name'] == 'ironIngot':
-		ironIngot = unit
-	elif unit['name'] == 'sword':
-		sword = unit
+	elif unit['name'] == 'swamp':
+		swamp = unit
+	elif unit['name'] == 'tree':
+		tree = unit
+	elif unit['name'] == 'mountain':
+		mountain = unit
+	elif unit['name'] == 'ground':
+		ground = unit
+	elif unit['name'] == 'water':
+		water = unit
 		              
 	  

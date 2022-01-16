@@ -176,8 +176,8 @@ def buildGraph2(fileName):
     tileList = []
     y= 0
     x= 0
-    tileWidth = 9
-    tileHeight = 9
+    tileWidth = 10
+    tileHeight = 10
     SizeInfo = []
     currentIndex = 0
     walkingCost = 1.0
@@ -261,14 +261,14 @@ def buildGraph2(fileName):
                 if letter == 'T':
                     newTile.setColr(Configuration.tree['color'])
                 if letter == 'V':
-                    newTile.setColr("blue")
+                    newTile.setColr(Configuration.water['color'])
                 if letter == 'G':
-                    newTile.setColr("yellow")
+                    newTile.setColr(Configuration.swamp['color'])
 
                 if letter == 'B':
-                    newTile.setColr("grey")
+                    newTile.setColr(Configuration.mountain['color'])
                 if letter == 'M':
-                    newTile.setColr("green")
+                    newTile.setColr(Configuration.ground['color'])
 
                 tileList.append(newTile)
                 x += tileWidth
