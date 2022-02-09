@@ -3,3 +3,7 @@ Bröt ut två funktioner ur skapandet av graf  (kartan) "MakeDiagonalsUnwalkable
 insåg att tidigare lösning bakar in heuristics i kartan vilket inte kommer att stödja pathfinding i realtid. 
 
 test.
+
+2022-02-09
+Nytt projekt Engine_testing
+testar att göra en enhet som följer musklick i realtid
